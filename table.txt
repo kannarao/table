@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Table with Post Action</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.0/underscore-min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"></button>
+      <a class="navbar-brand" href="#">
+        Table
+      </a>
+    
+    </div>
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="sel1">Source list:</label>
+        <select class="form-control" id="sel1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="sel1">Select list:</label>
+        <select class="form-control" id="sel1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="sel1">Select list:</label>
+        <select class="form-control" id="sel1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="sel1">Select list:</label>
+        <input type="date" name="date" class="form-control" value="2013-01-08">
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-group">
+        <label for="sel1">Select list:</label>
+        <select class="form-control" id="sel1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <button class="btn btn-primary send" style="margin-top:25px;">Run</button>
+    </div>
+  </div>
+
+  <h2>Table</h2>
+  <p>Table with Post Action:</p>            
+  <div id="target"></div>
+  <!--<table class="table">
+    <thead>
+      <tr>
+        <th>S Env</th>
+        <th>T Env</th>
+        <th>App</th>
+        <th>S</th>
+        <th>P</th>
+        <th>d t</th>
+        <th>u</th>
+        <th>s s</th>
+        <th>s</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="first">John</td>
+        <td class="last">Doe</td>
+        <td class="email">john@example.com</td>
+        <td><button type="button" class="btn btn-default send">POST</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+        <td><button type="button" class="btn btn-default send">POST</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+        <td><button type="button" class="btn btn-default send">POST</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>-->
+</div>
+
+<script type="text/html" id='usageList'>
+    <table class="table"> 
+      <thead> 
+         <tr> 
+            <th>S Env</th>
+            <th>T Env</th>
+            <th>App</th>
+            <th>S</th>
+            <th>P</th>
+            <th>t</th>
+            <th>u</th>
+            <th>s s</th>
+            <th>s</th> 
+            <th>update</th>
+         </tr>
+      </thead> 
+      <tbody>
+        <% _.each(items, function(item, key, list) { %> 
+             <% var f = item.name; %> 
+              <tr> 
+                  <td class="s_env"> <%= key %></td>
+                  <td class="<%= f %>"><%= item.name %></td > 
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <select class="form-control" id="sel1">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                    </select>
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td><button type="button" class="btn btn-default post">POST</button></td>
+              </tr>
+        <% });%>
+    </tbody > 
+   </table>
+</script>
+
+<script>
+  $(function(){
+    $(".send").click(function(event){
+      var e = $(event.target).parents("tr");
+      var data = {};
+      data['firstname'] = e.find(".first").text();
+      data['lastname'] = e.find(".last").text();
+      data['email'] = e.find(".email").text();
+      $.post("https://www.google.com/api_url/", data, function(result){
+        // response
+        var items = [
+        {name:"Alejandro",
+        },
+        {name:"kanna",
+        },
+      ];
+ 
+      var compiled = _.template(usageList.innerHTML);
+      target.innerHTML = compiled({items: items})
+      });
+    });
+
+    $("body").on("click", ".post", function(event){
+      var e = $(event.target).parents("tr");
+      var data = {};
+      data['source_env'] = e.find(".s_env").text();
+      alert(data.source_env);
+      $.post("https://www.google.com/api_url/", data, function(result){
+        // response
+        $(".send").click();
+      });
+    });
+  })
+</script>
+</body>
+</html>
