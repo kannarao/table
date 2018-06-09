@@ -7,7 +7,7 @@
 <div class="container card" style="padding: 30px;">
   
   <div class="stepwizard col-md-offset-3" style="padding-bottom:20px;">
-    <div class="stepwizard-row setup-panel">
+    <div class="stepwizard-row setup-panel hide">
       <div class="stepwizard-step">
         <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
         <p>Step 1</p>
@@ -75,7 +75,7 @@
               <label class="form-check-label" for="exampleCheck1">Tomcat</label>
             </div>
             <div class="col-md-3">
-              <input  maxlength="100" name="deWebPath" type="text" class="form-control" placeholder="Enter Path"  />
+              <input  maxlength="100" name="deWebPath" type="text" class="form-control hide" placeholder="Enter Path"  />
             </div>
           </div>
 
@@ -91,7 +91,7 @@
               <label class="form-check-label" for="exampleCheck1">Tomcat</label>
             </div>
             <div class="col-md-3">
-              <input  maxlength="100" name="webServicePath" type="text" class="form-control" placeholder="Enter Path"  />
+              <input  maxlength="100" name="webServicePath" type="text" class="form-control hide" placeholder="Enter Path"  />
             </div>
           </div>
 
@@ -125,9 +125,81 @@
         <form role="form" name="Two">
         <div class="col-md-12">
           <div class="form-group row">
+            <label class="control-label col-md-3 text-right">CS Verision:</label>
+
+            <div class="col-md-2">
+              <input type="radio" name="twocsVersion" class="form-check-input" checked value="10.5">
+              <label class="form-check-label" for="exampleCheck1"> 10.5</label>
+            </div>
+            <div class="col-md-2">
+              <input type="radio" name="twocsVersion" class="form-check-input" value="16">
+              <label class="form-check-label" for="exampleCheck1"> 16</label>
+            </div>
+            <div class="col-md-2">
+              <input type="radio" name="twocsVersion" class="form-check-input" value="16.25">
+              <label class="form-check-label" for="exampleCheck1"> 16.25</label>
+            </div>
+            <div class="col-md-2">
+              <input type="radio" name="twocsVersion" class="form-check-input" value="main">
+              <label class="form-check-label" for="exampleCheck1"> main</label>
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <label class="control-label col-md-3 text-right">Default Website:</label>
+
+            <div class="col-md-2">
+              <input type="radio" name="twodeWeb" class="form-check-input" checked value="IIS">
+              <label class="form-check-label" for="exampleCheck1">IIS</label>
+            </div>
+            <div class="col-md-2">
+              <input type="radio" name="twodeWeb" class="form-check-input" value="Tomcat">
+              <label class="form-check-label" for="exampleCheck1">Tomcat</label>
+            </div>
+            <div class="col-md-3">
+              <input  maxlength="100" name="twodeWebPath" type="text" class="form-control hide" placeholder="Enter Path"  />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="control-label col-md-3 text-right">Web Service:</label>
+
+            <div class="col-md-2">
+              <input type="radio" name="twowebService" class="form-check-input" checked value="IIS">
+              <label class="form-check-label" for="exampleCheck1">IIS</label>
+            </div>
+            <div class="col-md-2">
+              <input type="radio" name="twowebService" class="form-check-input" value="Tomcat">
+              <label class="form-check-label" for="exampleCheck1">Tomcat</label>
+            </div>
+            <div class="col-md-3">
+              <input  maxlength="100" name="twowebServicePath" type="text" class="form-control hide" placeholder="Enter Path"  />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="control-label col-md-3 text-right">Name:</label>
+            <div class="col-md-3">
+              <input  maxlength="100" type="text" name="twoname" class="form-control" placeholder="Enter Name"  required="" />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="control-label col-md-3 text-right">Database:</label>
+
+            <div class="col-md-2">
+              <input type="radio" name="twodatabase" class="form-check-input" checked value="MYSQL">
+              <label class="form-check-label" for="exampleCheck1">MYSQL</label>
+            </div>
+            <div class="col-md-2">
+              <input type="radio" name="twodatabase" class="form-check-input" value="ORACLE">
+              <label class="form-check-label" for="exampleCheck1">ORACLE</label>
+            </div>
+          </div>
+          <div class="form-group row">
             <label class="control-label col-md-3 text-right">DB Name:</label>
             <div class="col-md-6">
-              <input name="twoName" maxlength="100" type="text" class="form-control" placeholder="Enter"  required="" />
+              <input name="twoDBName" maxlength="100" type="text" class="form-control" placeholder="Enter"  required="" />
             </div>
           </div>
           <div class="form-group row">
@@ -139,7 +211,7 @@
           <div class="form-group row">
             <label class="control-label col-md-3 text-right">Password:</label>
             <div class="col-md-6">
-              <input name="twoPassword" maxlength="100" type="password" class="form-control" placeholder="Enter Path" required="" />
+              <input name="twoPassword" maxlength="100" type="password" class="form-control" placeholder="Enter Password" required="" />
             </div>
           </div>
           <button class="btn btn-primary nextBtn btn-lg pull-right" type="submit" >Submit</button>
@@ -154,19 +226,19 @@
           <div class="form-group row">
             <label class="control-label col-md-3 text-right">CS URL:</label>
             <div class="col-md-6">
-              <input name="threeUrl" maxlength="100" type="text" class="form-control" placeholder="Enter Path" required="" />
+              <input name="threeUrl" maxlength="100" type="text" class="form-control" placeholder="Enter" required="" />
             </div>
           </div>
           <div class="form-group row">
             <label class="control-label col-md-3 text-right">User:</label>
             <div class="col-md-6">
-              <input name="threeUser" maxlength="100" type="text" class="form-control" placeholder="Enter Path"  required="" />
+              <input name="threeUser" maxlength="100" type="text" class="form-control" placeholder="Enter"  required="" />
             </div>
           </div>
           <div class="form-group row">
             <label class="control-label col-md-3 text-right">Password:</label>
             <div class="col-md-6">
-              <input name="threePassword" maxlength="100" type="Password" class="form-control" placeholder="Enter Path"  required/>
+              <input name="threePassword" maxlength="100" type="Password" class="form-control" placeholder="Enter Password"  required/>
             </div>
           </div>
           <button class="btn btn-primary nextBtn btn-lg pull-right" type="submit" >Submit</button>
@@ -236,9 +308,9 @@
     let data = {operName: val};
     data['name'] = $("input[name='name']").val();
     data['csVersion'] = $("input[name='csVersion']").val();
-    data['database'] = $("input[name='database']").val();
-    data['deWeb'] = $("input[name='deWeb']").val();
-    data['webService'] = $("input[name='webService']").val();
+    data['database'] = $("input[name='database']:checked").val();
+    data['deWeb'] = $("input[name='deWeb']:checked").val();
+    data['webService'] = $("input[name='webService']:checked").val();
     data['deWebPath'] = $("input[name='deWebPath']").val();
     data['webServicePath'] = $("input[name='webServicePath']").val();
     return data;
@@ -247,7 +319,16 @@
   function two() {
     // body...
     let data = {operName: val};
-    data['twoName'] = $("input[name='twoName']").val();
+
+    data['twoname'] = $("input[name='twoname']").val();
+    data['twocsVersion'] = $("input[name='twocsVersion']").val();
+    data['twodatabase'] = $("input[name='twodatabase']:checked").val();
+    data['twodeWeb'] = $("input[name='twodeWeb']:checked").val();
+    data['twowebService'] = $("input[name='twowebService']:checked").val();
+    data['twodeWebPath'] = $("input[name='twodeWebPath']").val();
+    data['twowebServicePath'] = $("input[name='twowebServicePath']").val();
+
+    data['twoDBName'] = $("input[name='twoDBName']").val();
     data['twoUser'] = $("input[name='twoUser']").val();
     data['twoPassword'] = $("input[name='twoPassword']").val();
     return data;
@@ -275,6 +356,46 @@
     console.log(three())
     return false;
   });
+
+  $("input:radio[name='twodeWeb']").change(function() {
+        if (this.value == 'Tomcat') {
+            $('input[name="twodeWebPath"]').val('');
+            $('input[name="twodeWebPath"]').addClass('show');
+        } else {
+            $('input[name="twodeWebPath"]').val('');
+            $('input[name="twodeWebPath"]').removeClass('show');
+        }
+    });
+
+  $("input[name='twowebService']").change(function() {
+        if (this.value == 'Tomcat') {
+            $('input[name="twowebServicePath"]').val('');
+            $('input[name="twowebServicePath"]').addClass('show');
+        } else {
+          $('input[name="twowebServicePath"]').val('');
+          $('input[name="twowebServicePath"]').removeClass('show');
+        }
+    });
+
+  $("input:radio[name='deWeb']").change(function() {
+        if (this.value == 'Tomcat') {
+            $('input[name="deWebPath"]').val('');
+            $('input[name="deWebPath"]').addClass('show');
+        } else {
+            $('input[name="deWebPath"]').val('');
+            $('input[name="deWebPath"]').removeClass('show');
+        }
+    });
+
+  $("input[name='webService']").change(function() {
+        if (this.value == 'Tomcat') {
+            $('input[name="webServicePath"]').val('');
+            $('input[name="webServicePath"]').addClass('show');
+        } else {
+          $('input[name="webServicePath"]').val('');
+          $('input[name="webServicePath"]').removeClass('show');
+        }
+    });
 });
 </script>
 
