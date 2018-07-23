@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Table with Post Action</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style type="text/css">
+  .table-bordered tbody td {border: none !important; border-right: solid 1px #ccc !important;}
+</style>
+
+<div class="container-fluid">
+  <h2>Table</h2>
+  <p>Table with Post Action:</p>            
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th rowspan="2" style="text-align: center;">Firstname</th>
+        <th colspan="3" style="text-align: center;">Lastname</th>
+        <th colspan="3" style="text-align: center;">Email</th>
+        <th colspan="3" style="text-align: center;">Post</th>
+        <th rowspan="2" style="text-align: center;">Firstname</th>
+      </tr>
+      <tr align="center">
+        <th style="text-align: center;">Lastname</th>
+        <th style="text-align: center;">Email</th>
+        <th style="text-align: center;">Post</th>
+
+        <th style="text-align: center;">Lastname</th>
+        <th style="text-align: center;">Email</th>
+        <th style="text-align: center;">Post</th>
+
+        <th style="text-align: center;">Lastname</th>
+        <th style="text-align: center;">Email</th>
+        <th style="text-align: center;">Post</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Lastname Lastname Lastname Lastname Lastname Lastname Lastname Lastname Lastname Lastname Lastname Lastname</td>
+        <td>Lastname</td>
+        <td>Lastname</td>
+        <td>Lastname</td>
+
+        <td>Lastname</td>
+        <td>Lastname</td>
+        <td>Lastname</td>
+
+        <td>Lastname</td>
+        <td>Lastname</td>
+        <td>Lastname</td>
+        <td>Lastname</td>
+      </tr>
+      <tr>
+        <td>Lastname Lastname Lastname Lastname Lastname Lastname Lastname Lastname Lastname Lastname Lastname Lastname</td>
+        <td>Lastname</td>
+        <td>Lastname</td>
+        <td>Lastname</td>
+
+        <td>Lastname</td>
+        <td>Lastname</td>
+        <td>Lastname</td>
+
+        <td>Lastname</td>
+        <td>Lastname</td>
+        <td>Lastname</td>
+        <td>Lastname</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  $(function(){
+
+    $(".send").click(function(event){
+      var e = $(event.target).parents("tr");
+      var data = {};
+      data['firstname'] = e.find(".first").text();
+      data['lastname'] = e.find(".last").text();
+      data['email'] = e.find(".email").text();
+      $.post("https://www.google.com/api_url/", data, function(result){
+        // response
+      });
+    })
+  });
+</script>
+</body>
+</html>
